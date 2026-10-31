@@ -67,8 +67,7 @@ def check_winner(board):
 
 
 def check_draw(board):
-    """Возвращает True, если партия закончилась ничьей."""
-    raise NotImplementedError("Проверка ничьей ещё не реализована.")
+    return " " not in board and check_winner(board) is None
 
 
 def ask_restart():
