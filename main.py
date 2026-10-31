@@ -16,8 +16,26 @@ def print_board(board):
 
 
 def read_move(board):
-    """Получает и проверяет номер клетки."""
-    raise NotImplementedError("Проверка ввода ещё не реализована.")
+    while True:
+        text = input("Номер клетки (1–9): ").strip()
+
+        try:
+            number = int(text)
+        except ValueError:
+            print("Введи целое число от 1 до 9.")
+            continue
+
+        if not 1 <= number <= 9:
+            print("Такой клетки нет. Выбери число от 1 до 9.")
+            continue
+
+        index = number - 1
+
+        if board[index] != " ":
+            print("Клетка занята. Выбери другую.")
+            continue
+
+        return index
 
 
 def next_player(player):
