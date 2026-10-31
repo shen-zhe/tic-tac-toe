@@ -71,9 +71,16 @@ def check_draw(board):
 
 
 def ask_restart():
-    """Спрашивает, нужно ли начать новую партию."""
-    raise NotImplementedError("Перезапуск ещё не реализован.")
+    while True:
+        answer = input("Сыграть ещё раз? (да/нет): ").strip().lower()
 
+        if answer in ("да", "д", "yes", "y"):
+            return True
+
+        if answer in ("нет", "н", "no", "n"):
+            return False
+
+        print("Ответь «да» или «нет».")
 
 def main():
     while True:
