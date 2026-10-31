@@ -39,8 +39,10 @@ def read_move(board):
 
 
 def next_player(player):
-    """Возвращает знак следующего игрока."""
-    raise NotImplementedError("Смена игроков ещё не реализована.")
+    if player == "X":
+        return "O"
+
+    return "X"
 
 
 def check_winner(board):
